@@ -32,7 +32,6 @@ public class MisTareasController {
         if (tarea != null) {
             return new ResponseEntity<>(tarea, HttpStatus.OK);
         } else {
-            // Enviar una respuesta HTTP 404 si la tarea no se encuentra
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

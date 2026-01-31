@@ -14,16 +14,17 @@ public class MisTareasServiceImpl implements MisTareasService {
     public MisTareasServiceImpl(MisTareasRepository misTareasRepository) {
         this.misTareasRepository = misTareasRepository;
     }
+    @Override
+    public void eliminarTarea(Long id) {
+        misTareasRepository.eliminarTarea(id);
+    }
 
     @Override
     public List<Task> getMisTareas() {
         return misTareasRepository.getMisTareas();
     }
 
-    @Override
-    public Task getMiTarea(Long id) {
-        return misTareasRepository.getMiTarea(id);
-    }
+
 
     @Override
     public void crearTarea(Task task) {
@@ -35,8 +36,8 @@ public class MisTareasServiceImpl implements MisTareasService {
         misTareasRepository.actualizarTarea(task);
     }
     @Override
-    public void eliminarTarea(Long id) {
-        misTareasRepository.eliminarTarea(id);
+    public Task getMiTarea(Long id) {
+        return misTareasRepository.getMiTarea(id);
     }
 
 }
