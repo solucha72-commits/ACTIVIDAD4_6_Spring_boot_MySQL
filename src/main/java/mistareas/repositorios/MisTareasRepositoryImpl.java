@@ -64,8 +64,5 @@ public class MisTareasRepositoryImpl implements MisTareasRepository {
     @Override
     public void eliminarTarea(Long id) {
         jdbcTemplate.update("DELETE FROM task WHERE id = ?", id);
-
     }
-
-
 }
