@@ -23,9 +23,6 @@ public class MisTareasServiceImpl implements MisTareasService {
     public List<Task> getMisTareas() {
         return misTareasRepository.getMisTareas();
     }
-
-
-
     @Override
     public void crearTarea(Task task) {
         misTareasRepository.crearTarea(task);
