@@ -19,6 +19,12 @@ public class MisTareasController {
         this.misTareasService = misTareasService;
     }
 
+    @PostMapping
+    public ResponseEntity<Void> crear(@RequestBody Task task) {
+        misTareasService.crearTarea(task);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
     @GetMapping
     public List<Task> obtenerTodos() {
         return misTareasService.getMisTareas();
@@ -35,11 +41,7 @@ public class MisTareasController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @PostMapping
-    public ResponseEntity<Void> crear(@RequestBody Task task) {
-        misTareasService.crearTarea(task);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
+
     @PutMapping("/{id}")
     public void actualizarTarea(
             @PathVariable Long id,
@@ -54,6 +56,4 @@ public class MisTareasController {
         misTareasService.eliminarTarea(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }
